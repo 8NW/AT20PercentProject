@@ -3,11 +3,23 @@
 WebSight is a machine-learning based HTML/website summarizer engine built in Python which makes it possible to feed in a website and create a navigatable format for those who are occularly impaired. 
 
 
-#### How it Works
+# How it Works
 
-Websight utilizes [sklearn](http://scikit-learn.org/stable/) to create a machine learning system that takes in a website and identifies all components of the website. After this step it sorts and labels them. Afterwards it reformats the website into a series of arrays based on the header label assigned to the blocks of the website. ONce in the array form, the user can navigate through the newly formatted website type.
+Websight utilizes [sklearn](http://scikit-learn.org/stable/) to create a machine learning system that takes in a website and identifies all components of the website. After this step it sorts and labels them. Afterwards it reformats the website into a series of arrays based on the header label assigned to the blocks of the website. Once in the array form, the user can navigate through the newly formatted website type.
 
+# Getting Started
 
-#### Submission
+At this stage the 
 
-Make sure that your code works the way your group intends, then push your group's repo to Github.
+# What Each File Does
+
+# Development pattern for contributors
+
+1. [Create a fork](https://help.github.com/articles/fork-a-repo/) of
+   the [main WebSight repository](https://github.com/gunthercox/ChatterBot) on GitHub.
+2. Make your changes in a branch named something different from `master`, e.g. create
+   a new branch `my-pull-request`.
+3. [Create a pull request](https://help.github.com/articles/creating-a-pull-request/).
+4. Please follow the [Python style guide for PEP-8](https://www.python.org/dev/peps/pep-0008/).
+5. Use the projects [built-in automated testing](http://chatterbot.readthedocs.io/en/latest/testing.html)
+   to help make sure that your contribution is free from errors.
