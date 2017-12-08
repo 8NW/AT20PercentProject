@@ -9,14 +9,14 @@ Websight utilizes [sklearn](http://scikit-learn.org/stable/) to create a machine
 
 # Getting Started
 
-At this stage the 
+At this stage the program to get it to work you must manually enter the htmlsummarizer.py document and manually enter the website url into the code. This location is clearly commented. Once you have entered the desired website url you should just be able to run the htmlsummarizer.py file(currently the newly formatted website is navigable through the requested commands in the console or terminal).
 
 # What Each File Does
 
 # Development pattern for contributors
 
 1. [Create a fork](https://help.github.com/articles/fork-a-repo/) of
-   the [main WebSight repository](https://github.com/gunthercox/ChatterBot) on GitHub.
+   the [main WebSight repository](https://github.com/8NW/AT20PercentProject) on GitHub.
 2. Make your changes in a branch named something different from `master`, e.g. create
    a new branch `my-pull-request`.
 3. [Create a pull request](https://help.github.com/articles/creating-a-pull-request/).
