@@ -5,14 +5,8 @@ WebSight is a machine-learning based HTML/website summarizer engine built in Pyt
 
 #### How it Works
 
-Websight utilizes [sklearn](http://scikit-learn.org/stable/)
+Websight utilizes [sklearn](http://scikit-learn.org/stable/) to create a machine learning system that takes in a website and identifies all components of the website. After this step it sorts and labels them. Afterwards it reformats the website into a series of arrays based on the header label assigned to the blocks of the website. ONce in the array form, the user can navigate through the newly formatted website type.
 
-
-Create a web app that has at least one database [model](http://mongoosejs.com/docs/models.html). It must meet the following requirements:
- - Have the ability to create new instances of the [model](http://mongoosejs.com/docs/models.html) in the database.
- - Show a useful subset of database entries. (Look into [sorting, filtering, and selecting](http://mongoosejs.com/docs/queries.html))
- - Update a database entry. ([Updating an entry](http://mongoosejs.com/docs/documents.html))
- - Style (with CSS) your page(s). ([Static files](https://expressjs.com/en/starter/static-files.html))
 
 #### Submission
 
