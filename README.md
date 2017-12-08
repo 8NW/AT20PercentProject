@@ -13,6 +13,14 @@ At this stage the program to get it to work you must manually enter the htmlsumm
 
 ## What Each File Does
 
+#### htmlsummarizer.py
+
+#### htmlparser.py
+
+#### mlTrainer.py
+
+#### pkl documents
+
 ## Development pattern for contributors
 
 1. [Create a fork](https://help.github.com/articles/fork-a-repo/) of
