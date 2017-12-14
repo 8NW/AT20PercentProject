@@ -23,7 +23,7 @@ The hmlsummarizer.py file is the core of code of the project.
 
 #### pkl documents
 
-The pkl documents within the project act as dictionaries for the data that the other files access. These should not be deleted or tampered with as they contain the data
+The pkl documents within the project act as dictionaries for the data that the other files access. These should not be deleted or tampered with as they contain the data that the machine learning uses.
 
 ## Development pattern for contributors
 
