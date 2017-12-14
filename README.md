@@ -9,17 +9,21 @@ Websight utilizes [sklearn](http://scikit-learn.org/stable/) to create a machine
 
 ## Getting Started
 
-At this stage the program to get it to work you must manually enter the htmlsummarizer.py document and manually enter the website url into the code. This location is clearly commented. Once you have entered the desired website url you should just be able to run the htmlsummarizer.py file(currently the newly formatted website is navigable through the requested commands in the console or terminal).
+At this stage the program to get it to work you must manually enter the htmlsummarizer.py document and manually enter the website url into the code. This location is clearly commented. Once you have entered the desired website url you should just be able to run the htmlsummarizer.py file using terminal with the command "python htmlsummarizer.py"(currently the newly formatted website is navigable through the requested commands in the console or terminal).
 
 ## What Each File Does
 
 #### htmlsummarizer.py
+
+The hmlsummarizer.py file is the core of code of the project. 
 
 #### htmlparser.py
 
 #### mlTrainer.py
 
 #### pkl documents
+
+The pkl documents within the project act as dictionaries for the data that the other files access. These should not be deleted or tampered with as they contain the data
 
 ## Development pattern for contributors
 
