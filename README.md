@@ -15,11 +15,14 @@ At this stage the program to get it to work you must manually enter the htmlsumm
 
 #### htmlsummarizer.py
 
-The hmlsummarizer.py file is the core of code of the project. 
+The hmlsummarizer.py file is the core of code of the project. This takes the website and parses it using requests. It then passes it through the machine learning file and labels the website into the predifined labels. The website is then sorted into an array using the summarizing functions. Then it becomes navigable for the user. However, currently the list is just printed as it is easier to test.
 
 #### htmlparser.py
 
+The htmlparser.py file takes the website and parses it. The program then takes each of the compnents of the website and asks the user to label it for the machine learning program. This allows the user to also enter new labels for the machine learning labeling. This is so a user can build up the library that the machine learning program references.
+
 #### mlTrainer.py
+This is the machine learning program. These should not be deleted or tampered with through direct means. To add more data to the machine learning library the user should use the htmlparser.py file.
 
 #### pkl documents
 
