@@ -1,4 +1,5 @@
-import urllib2
+# import urllib2
+import urllib3
 import pickle
 #from googletrans import Translator
 from HTMLParser import HTMLParser
@@ -123,18 +124,20 @@ class MyHTMLParser(HTMLParser):
 		 self.tags = self.tags[:-1]
 
 	def handle_page(self, url): 
-		req = urllib2.Request(url)
-		response = urllib2.urlopen(req)
-		the_page = response.read()
+		http = urllib3.PoolManager()
+		req = http.request('GET', url)
+		the_page = req.data
+
+		# req = urllib2.Request(url)
+		# response = urllib2.urlopen(req)
+		# the_page = response.read()
 
 		self.feed(the_page)
 
 
 
 	def handle_data(self, data):
-
-		print()
-		print()
+		
 		print()
 		print("-------------------------------------------------")
 		print()

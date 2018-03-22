@@ -1,7 +1,8 @@
 import sklearn
 import pickle
 import requests
-import urllib2
+# import urllib2
+import urllib3
 #from googletrans import Translator
 from os import system
 from sklearn.svm import SVC
@@ -46,15 +47,16 @@ class MyHTMLSummarizer(HTMLParser):
 		 self.tags = self.tags[:-1]
 
 	def handle_page(self, url): 
-		# req = urllib2.Request(url)
+		http = urllib3.PoolManager()
+		req = http.request('GET', url)
 		# response = urllib2.urlopen(req)
 		# the_page = response.read()
 
-		req = requests.get(url)
-		# print(req.text)
-		the_page = req.text
+		# req = requests.get(url)
+		# # print(req.text)
+		# the_page = req.text
 
-		self.feed(the_page)
+		self.feed(r)
 
 
 
@@ -189,14 +191,14 @@ if __name__ == '__main__':
 	summarizer.load_trained()
 
 	#print(parser.htmltags)
-	website = 'https://www.wsj.com'
+	website = 'https://www.google.com/search?q=godaklsjf&oq=godaklsjf&aqs=chrome..69i57.1204j0j1&sourceid=chrome&ie=UTF-8'
 	summarizer.handle_page(website)
 
 	summarizer.summarize_site(website)
 	# summarizer.summarize_top_level();
 
 	for i in summarizer.collected:
-		print i.convert(summarizer.labelDict)
+		print(i.convert(summarizer.labelDict))
 		# system('say ' + i.oData)
 
 		
