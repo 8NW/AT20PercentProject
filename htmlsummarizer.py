@@ -50,11 +50,15 @@ class MyHTMLSummarizer(HTMLParser):
 		# response = urllib2.urlopen(req)
 		# the_page = response.read()
 
-		req = requests.get(url)
-		# print(req.text)
-		the_page = req.text
+		# req = requests.get(url)
+		# # print(req.text)
+		# the_page = req.text
 
-		self.feed(the_page)
+		# self.feed(the_page)
+
+		http = urllib3.PoolManager()
+		r = http.request('GET', url)
+		self.feed(r.data)
 
 
 
@@ -197,7 +201,7 @@ if __name__ == '__main__':
 
 	for i in summarizer.collected:
 		print i.convert(summarizer.labelDict)
-		# system('say ' + i.oData)
+		system('say ' + i.data)
 
 		
 
