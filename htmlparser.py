@@ -1,13 +1,13 @@
-import urllib2
+import urllib3
 import pickle
 #from googletrans import Translator
 from HTMLParser import HTMLParser
 
 
 class mlSamplers():
-	def __init__(self, numTags, ndata):# create oData for non-translated Data
+	def __init__(self, numTags, nData):# create oData for non-translated Data
 		self.numTags = numTags
-		self.data = ndata
+		self.data = nData
 		self.label = None
 		# self.oData = oData
 
@@ -123,11 +123,15 @@ class MyHTMLParser(HTMLParser):
 		 self.tags = self.tags[:-1]
 
 	def handle_page(self, url): 
-		req = urllib2.Request(url)
-		response = urllib2.urlopen(req)
-		the_page = response.read()
+		http = urllib3.PoolManager()
+		r = http.request('GET', url)
 
-		self.feed(the_page)
+
+		# req = urllib2.Request(url)
+		# response = urllib2.urlopen(req)
+		# the_page = response.read()
+
+		self.feed(r.data)
 
 
 
@@ -206,5 +210,5 @@ if __name__ == '__main__':
 	parser.load_trained()
 
 	#print(parser.htmltags)
-	parser.handle_page('https://www.w3schools.com/w3css/tryw3css_templates_parallax.htm')
+	parser.handle_page('https://www.reddit.com/')
 	parser.endPage()
