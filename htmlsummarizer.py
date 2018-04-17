@@ -153,7 +153,7 @@ class MyHTMLSummarizer(HTMLParser):
 
 
 
- 
+# GOOGLE TRANSLATE API VERSION BEGINNING
 #-----------------------------------------------	
 	# def summarize_top_level(self):
 	# 	system('say' + (translator.translate("Welcome to ", dest=translator.detect(self.summarized[0])) + self.summarized[0]))
