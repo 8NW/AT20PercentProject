@@ -1,8 +1,7 @@
 import sklearn
 import pickle
 import requests
-import urllib2
-#from googletrans import Translator
+import urllib3
 from os import system
 from sklearn.svm import SVC
 from sklearn.model_selection import train_test_split
@@ -17,7 +16,6 @@ class MyHTMLSummarizer(HTMLParser):
 	tags = []
 	maxDIVS = 40
 	mlData = []
-	# translator = Translator()
 
 	def load_tagdict(self, file_name):
 		file = open(file_name, 'rb')
@@ -46,15 +44,6 @@ class MyHTMLSummarizer(HTMLParser):
 		 self.tags = self.tags[:-1]
 
 	def handle_page(self, url): 
-		# req = urllib2.Request(url)
-		# response = urllib2.urlopen(req)
-		# the_page = response.read()
-
-		# req = requests.get(url)
-		# # print(req.text)
-		# the_page = req.text
-
-		# self.feed(the_page)
 
 		http = urllib3.PoolManager()
 		r = http.request('GET', url)
@@ -84,8 +73,6 @@ class MyHTMLSummarizer(HTMLParser):
 
 		if sample.label != 0 and sample.label!=10:
 			self.collected.append(sample)
-
-		# print(sample.label)
 
 
 # -----------------------------------------------
@@ -154,35 +141,6 @@ class MyHTMLSummarizer(HTMLParser):
 			strOfI = str(i)
 
 
-
- 
-#-----------------------------------------------	
-	# def summarize_top_level(self):
-	# 	system('say' + (translator.translate("Welcome to ", dest=translator.detect(self.summarized[0])) + self.summarized[0]))
-	# 	if len(self.summarized) >= 2:
-	# 		system('say' + (translator.translate("You have " + str(len(self.summarized)) + "bodies.", dest=translator.detect(self.summarized[0])) + self.summarized[0]))
-	# 		for i in len(self.summarized):
-	# 			system('say' + self.summarized[i][0].oData )
-
-
-
-
-	# def summarize_body_level(self, inputIndex):
-
-
-
-	# def summarize_top_level(self):
-	# 	for i in self.summarized:
-	# 		strOfI = str(i[0])
-	# 		# encodedI = strOfI.encode('utf-8')
-	# 		print(strOfI)
-			# for x in i:
-			# 	print(str(x))s
-			# 	system('say ' + str(x))
-			
-		
-
-# -----------------------------------------------
 
 
 if __name__ == '__main__':

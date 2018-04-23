@@ -1,15 +1,13 @@
 import urllib3
 import pickle
-#from googletrans import Translator
 from HTMLParser import HTMLParser
 
 
 class mlSamplers():
-	def __init__(self, numTags, nData):# create oData for non-translated Data
+	def __init__(self, numTags, nData):
 		self.numTags = numTags
 		self.data = nData
 		self.label = None
-		# self.oData = oData
 
 	def convert(self, labelDict):
 		return "LABEL: ", labelDict[self.label], ", DATA: ", self.data
@@ -126,11 +124,6 @@ class MyHTMLParser(HTMLParser):
 		http = urllib3.PoolManager()
 		r = http.request('GET', url)
 
-
-		# req = urllib2.Request(url)
-		# response = urllib2.urlopen(req)
-		# the_page = response.read()
-
 		self.feed(r.data)
 
 
@@ -150,8 +143,7 @@ class MyHTMLParser(HTMLParser):
 
 		numTags = []
 		moddedTags = self.tags
-		#if(len(self.tags)>self.maxDIVS):
-			#moddedTags = self.tags[-self.maxDIVS:]
+
 		for t in moddedTags:
 			try:
 				numTags.append(self.htmltags[t])
@@ -182,13 +174,6 @@ class MyHTMLParser(HTMLParser):
 
 		sample.label = label
 		self.mlData.append(sample)
-
-		
-
-
-		#numTags = [-1]*(self.maxDIVS-len(numTags)) + numTags
-		#print("Encountered tagNums", numTags)
-
 
 
 

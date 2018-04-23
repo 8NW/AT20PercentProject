@@ -43,21 +43,8 @@ learner.fit(dataTrain, labelTrain)
 accuracy = learner.score(dataTest, labelTest)
 for i in range(len(labelTest)):
 	print(labelTest[i] , ", " , learner.predict([dataTrain[i]]))
-# print(learner.predict(dataTest))
 #-----------------------------------------------
-# pca = PCA(n_components = 2)
-# transformedPCAData = pca.fit_transform(dataTrain, labelTrain)
-# print(pca.explained_variance_ratio_)
 
-# learner = SVC(kernel = 'rbf')
-# learner.fit(transformedPCAData, labelTrain)
-
-
-# transformedPCATestData = pca.transform(dataTest)
-# accuracy = learner.score(transformedPCATestData, labelTest)
-
-# print(learner.predict(transformedPCATestData))
-#-----------------------------------------------
 print(str(accuracy*100) + "%")
 
 pkl_file = open('trained.pkl', 'wb')
